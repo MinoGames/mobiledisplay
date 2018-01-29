@@ -1,5 +1,5 @@
 package mobiledisplay.event;
-import flash.events.Event;
+import openfl.events.Event;
 
 
 class MobileKeyboardPopupEvent extends Event

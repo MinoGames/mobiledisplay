@@ -1,5 +1,5 @@
 package mobiledisplay;
-import flash.display.Sprite;
+import openfl.display.Sprite;
 import extensionkit.ExtensionKit;
 
 #if cpp
