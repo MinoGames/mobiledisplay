@@ -1,10 +1,10 @@
 package mobiledisplay;
 
-import openfl.display.Bitmap;
-import openfl.display.PixelSnapping;
-import openfl.display.Sprite;
-import openfl.events.Event;
-import openfl.events.MouseEvent;
+import flash.display.Bitmap;
+import flash.display.PixelSnapping;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
 import mobiledisplay.event.MobileKeyboardPopupEvent;
 import openfl.Assets;
 
