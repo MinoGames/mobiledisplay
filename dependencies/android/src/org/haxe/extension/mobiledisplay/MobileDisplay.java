@@ -7,23 +7,23 @@ import android.os.Bundle;
 
 public class MobileDisplay extends org.haxe.extension.Extension
 {
-    private SoftKeyboardListener m_softKeyboardListener;
+    private static SoftKeyboardListener m_softKeyboardListener;
     
-	@Override
-	public void onCreate(Bundle savedInstanceState)
-	{
-        m_softKeyboardListener = new SoftKeyboardListener();
-	    m_softKeyboardListener.InstallKeyboardListener(mainView);
-	}
-	
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+    }
+
     public static void KeepScreenOn(final boolean enabled)
     {
-        Trace.Warning("KeepScreenOn (JNI): " + (enabled ? "ENABLED" : "DISABLED"));
-        
+        m_softKeyboardListener = new SoftKeyboardListener();
+        m_softKeyboardListener.InstallKeyboardListener(mainView);
+
         mainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 mainView.setKeepScreenOn(enabled);
+                m_softKeyboardListener.resize(mainView);
             }
         });
     }	
