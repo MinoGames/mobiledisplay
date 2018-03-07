@@ -34,8 +34,7 @@ public class SoftKeyboardListener
                 //Utils.LogInfo("heightDiff: " + heightDiff);
                 //Utils.LogInfo("keyboardVisible: " + m_isSoftKeyboardVisible);
                 
-                if (!m_isSoftKeyboardVisible && heightDiff >= 100)
-                {                    
+                if (heightDiff > 0) {
                     m_isSoftKeyboardVisible = true;
                     HaxeCallback.DispatchEventToHaxe(
                         "mobiledisplay.event.MobileKeyboardPopupEvent", 
@@ -45,9 +44,7 @@ public class SoftKeyboardListener
                             screenHeight,
                             heightDiff
                         });
-                }
-                else if (m_isSoftKeyboardVisible && heightDiff < 100)
-                {
+                } else if (heightDiff <= 0) {
                     m_isSoftKeyboardVisible = false;
                     HaxeCallback.DispatchEventToHaxe(
                             "mobiledisplay.event.MobileKeyboardPopupEvent", 
@@ -58,8 +55,6 @@ public class SoftKeyboardListener
                                 heightDiff
                             });
                 }
-                
-                //Utils.LogInfo("newKeyboardVisible: " + m_isSoftKeyboardVisible);
             }
         });
     }
