@@ -12,13 +12,12 @@ public class MobileDisplay extends org.haxe.extension.Extension
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        m_softKeyboardListener = new SoftKeyboardListener();
+        m_softKeyboardListener.InstallKeyboardListener(mainView);
     }
 
     public static void KeepScreenOn(final boolean enabled)
     {
-        m_softKeyboardListener = new SoftKeyboardListener();
-        m_softKeyboardListener.InstallKeyboardListener(mainView);
-
         mainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {

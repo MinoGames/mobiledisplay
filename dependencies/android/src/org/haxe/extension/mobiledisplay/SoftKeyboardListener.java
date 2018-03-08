@@ -41,6 +41,7 @@ public class SoftKeyboardListener
         //Utils.LogInfo("keyboardVisible: " + m_isSoftKeyboardVisible);
         
         if (heightDiff > 0) {
+            android.util.Log.d(" ------------ resize Activate ", "m_isSoftKeyboardVisible: " + m_isSoftKeyboardVisible + " screenWidth: " + screenWidth + " screenHeight: " + screenHeight + " heightDiff: " + heightDiff);
             m_isSoftKeyboardVisible = true;
             HaxeCallback.DispatchEventToHaxe(
                 "mobiledisplay.event.MobileKeyboardPopupEvent", 
@@ -51,6 +52,7 @@ public class SoftKeyboardListener
                     heightDiff
                 });
         } else if (heightDiff <= 0) {
+            android.util.Log.d(" ------------ resize Deactivate ", "m_isSoftKeyboardVisible: " + m_isSoftKeyboardVisible + " screenWidth: " + screenWidth + " screenHeight: " + screenHeight + " heightDiff: " + heightDiff);
             m_isSoftKeyboardVisible = false;
             HaxeCallback.DispatchEventToHaxe(
                     "mobiledisplay.event.MobileKeyboardPopupEvent", 
