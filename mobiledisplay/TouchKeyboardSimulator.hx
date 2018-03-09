@@ -6,7 +6,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import mobiledisplay.event.MobileKeyboardPopupEvent;
-import openfl.Assets;
+import flash.Assets;
 
 
 /**
