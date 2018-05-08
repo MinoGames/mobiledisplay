@@ -8,6 +8,6 @@
     <dependency name="mobiledisplay" path="dependencies/android" if="android" />
     <android extension="org.haxe.extension.mobiledisplay.MobileDisplay" />
 
-    <assets path="assets" rename="mobiledisplay" include="*" />
+    <!--<assets path="assets" rename="mobiledisplay" include="*" />-->
 
 </project>
